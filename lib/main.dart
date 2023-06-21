@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dev/common/utils/constant.dart';
+import 'package:flutter_dev/features/onborading/pages/onborading.dart';
 import 'package:flutter_dev/features/todo/pages/home_page.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -19,13 +21,17 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         builder: (context, child) {
           return MaterialApp(
-              debugShowCheckedModeBanner: false,
+              debugShowCheckedModeBanner: false,              
               title: 'Shiku Todo',
               theme: ThemeData(
+                scaffoldBackgroundColor: AppConst.kBkDark,
                 colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
                 useMaterial3: true,
+                
               ),
-              home: HomePage());
+            themeMode: ThemeMode.dark,
+              // home: HomePage());
+              home: OnBorading());
         });
   }
 }
